@@ -1,1 +1,1 @@
-# orator-endpoint
+# Pluggable API Endpoint Base Class

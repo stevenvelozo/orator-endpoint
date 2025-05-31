@@ -1,0 +1,45 @@
+{
+    "name": "orator-endpoint",
+    "version": "1.0.0",
+    "description": "Orator Endpoint Base Class",
+    "main": "source/Orator-Endpoint-Base.js",
+    "scripts": {
+        "start": "node source/Orator-Endpoint-Base.js",
+        "test": "npx mocha -u tdd -R spec",
+        "tests": "npx mocha -u tdd --exit -R spec --grep",
+        "coverage": "npx nyc --reporter=lcov --reporter=text-lcov npx mocha -- -u tdd -R spec",
+        "build": "npx quack build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stevenvelozo/orator-endpoint.git"
+    },
+    "author": "steven velozo <steven@velozo.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/stevenvelozo/orator-endpoint/issues"
+    },
+    "homepage": "https://github.com/stevenvelozo/orator-endpoint#readme",
+    "devDependencies": {
+        "orator": "^5.0.1",
+        "quackage": "^1.0.38"
+    },
+    "mocha": {
+        "diff": true,
+        "extension": [
+            "js"
+        ],
+        "package": "./package.json",
+        "reporter": "spec",
+        "slow": "75",
+        "timeout": "5000",
+        "ui": "tdd",
+        "watch-files": [
+            "source/**/*.js",
+            "test/**/*.js"
+        ],
+        "watch-ignore": [
+            "lib/vendor"
+        ]
+    }
+}

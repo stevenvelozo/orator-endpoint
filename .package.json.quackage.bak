@@ -1,0 +1,20 @@
+{
+    "name": "orator-endpoint",
+    "version": "1.0.0",
+    "description": "Orator Endpoint Base Class",
+    "main": "source/Orator-Endpoint-Base.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/stevenvelozo/orator-endpoint.git"
+    },
+    "author": "steven velozo <steven@velozo.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/stevenvelozo/orator-endpoint/issues"
+    },
+    "homepage": "https://github.com/stevenvelozo/orator-endpoint#readme",
+    "devDependencies": {
+        "quackage": "^1.0.38"
+    }
+}
