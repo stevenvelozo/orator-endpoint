@@ -22,7 +22,7 @@
     "homepage": "https://github.com/stevenvelozo/orator-endpoint#readme",
     "devDependencies": {
         "orator": "^5.0.1",
-        "quackage": "^1.0.38"
+        "quackage": "^1.1.0"
     },
     "mocha": {
         "diff": true,
