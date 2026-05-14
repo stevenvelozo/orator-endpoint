@@ -21,9 +21,9 @@
     },
     "homepage": "https://github.com/stevenvelozo/orator-endpoint#readme",
     "devDependencies": {
-        "orator": "^5.0.1",
-        "pict-docuserve": "^0.1.5",
-        "quackage": "^1.1.0"
+        "orator": "^6.1.2",
+        "pict-docuserve": "^1.0.1",
+        "quackage": "^1.2.3"
     },
     "mocha": {
         "diff": true,
