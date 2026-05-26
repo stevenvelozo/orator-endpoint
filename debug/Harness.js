@@ -51,7 +51,7 @@ tmpAnticipate.anticipate(
 const libOratorServeStatic = require(`../source/Orator-HTTP-Proxy.js`);
 _Fable.serviceManager.addServiceType('OratorHTTPProxy', libOratorServeStatic);
 _Fable.serviceManager.instantiateServiceProvider('OratorHTTPProxy', {LogLevel: 2});
-// Proxy all /1.0/ requests to the locally-running bookstore service (you need to run this from https://github.com/stevenvelozo/retold-harness ... it's a one-liner to start the service)
+// Proxy all /1.0/ requests to the locally-running bookstore service (you need to run this from https://github.com/fable-retold/retold-harness ... it's a one-liner to start the service)
 tmpAnticipate.anticipate(
 	(fNext)=>
 	{
