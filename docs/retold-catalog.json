@@ -1,5 +1,5 @@
 {
-	"Generated": "2026-05-26T21:12:39.879Z",
+	"Generated": "2026-05-30T22:11:59.317Z",
 	"Mode": "module",
 	"GitHubOrg": "fable-retold",
 	"DefaultBranch": "master",
@@ -10,13 +10,40 @@
 		"Branch": "master",
 		"HasDocs": true,
 		"HasCover": true,
-		"Sidebar": [],
+		"Sidebar": [
+			{
+				"Title": "Getting Started",
+				"Children": [
+					{
+						"Title": "Introduction",
+						"Path": "README.md"
+					},
+					{
+						"Title": "Getting Started",
+						"Path": "quickstart.md"
+					}
+				]
+			},
+			{
+				"Title": "Reference",
+				"Children": [
+					{
+						"Title": "API Reference",
+						"Path": "api-reference.md"
+					}
+				]
+			}
+		],
 		"DocFiles": [
 			".nojekyll",
+			"README.md",
 			"_brand.json",
 			"_cover.md",
+			"_sidebar.md",
 			"_version.json",
+			"api-reference.md",
 			"index.html",
+			"quickstart.md",
 			"retold-catalog.json",
 			"retold-keyword-index.json"
 		]
