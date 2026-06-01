@@ -1,6 +1,6 @@
 # API Reference
 
-> **Source note.** This checkout of `orator-endpoint` does not include the `source/` directory, so this reference is reconstructed from the package metadata (`main` &rarr; `source/Orator-Endpoint-Base.js`), the endpoint authoring pattern used across the Retold ecosystem, and the way sibling code consumes that pattern. Items that cannot be confirmed without the source are flagged explicitly. Treat signatures as the demonstrated shape, not a guaranteed contract; verify against `source/Orator-Endpoint-Base.js` where exactness matters.
+> **Source note.** This checkout of `orator-endpoint` does not include the `source/` directory, so this reference is reconstructed from the package metadata (`main` -> `source/Orator-Endpoint-Base.js`), the endpoint authoring pattern used across the Retold ecosystem, and the way sibling code consumes that pattern. Items that cannot be confirmed without the source are flagged explicitly. Treat signatures as the demonstrated shape, not a guaranteed contract; verify against `source/Orator-Endpoint-Base.js` where exactness matters.
 
 ## Class: Orator-Endpoint-Base
 
@@ -52,7 +52,7 @@ The route map. An object keyed by HTTP verb; each value is an array of route des
 
 | Field | Type | Description |
 |-------|------|-------------|
-| *(key)* | string | HTTP verb &mdash; `GET`, `PUT`, `POST`, `DEL`, `PATCH`, etc. Observed verbs in usage are `GET` and `DEL`; other verbs follow the service server's verb method names. |
+| *(key)* | string | HTTP verb - `GET`, `PUT`, `POST`, `DEL`, `PATCH`, etc. Observed verbs in usage are `GET` and `DEL`; other verbs follow the service server's verb method names. |
 | `Path` | string | Route pattern. Restify-style path parameters (`:name`) are supported and surface on `pRequest.params`. |
 | `Function` | string | Name of the handler method on the endpoint class to bind to this route. |
 
@@ -66,7 +66,7 @@ The base class exposes an ordered initialization lifecycle. Subclasses override 
 
 ### `initialize(fCallback)`
 
-Runs the lifecycle in order: `onBeforeInitialize` &rarr; `onInitialize` &rarr; (records an initialization timestamp) &rarr; `onAfterInitialize`, then invokes `fCallback(pError)`. In the demonstrated pattern this is orchestrated with a Fable `Anticipate` waterfall.
+Runs the lifecycle in order: `onBeforeInitialize` -> `onInitialize` -> (records an initialization timestamp) -> `onAfterInitialize`, then invokes `fCallback(pError)`. In the demonstrated pattern this is orchestrated with a Fable `Anticipate` waterfall.
 
 ### `onBeforeInitialize(fCallback)`
 
@@ -129,7 +129,7 @@ module.exports.default_options = _DefaultOptions;
 
 Whether the base `Orator-Endpoint-Base` module itself attaches a `default_options` export (and what it contains) is defined in its source.
 
-## Unknowns &mdash; require the source to confirm
+## Unknowns - require the source to confirm
 
 The following could not be determined from this checkout (no `source/`, and the local `test/`/`debug/` do not exercise the base class):
 

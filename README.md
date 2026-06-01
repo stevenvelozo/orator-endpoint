@@ -1,12 +1,12 @@
 # Orator Endpoint Base Class
 
-> **[&#9654; Read the Orator-Endpoint Documentation](https://fable-retold.github.io/orator-endpoint/)** &mdash; interactive docs with the full API reference.
+> **[Read the Orator-Endpoint Documentation](https://fable-retold.github.io/orator-endpoint/)** - interactive docs with the full API reference.
 
 > Base endpoint class for Orator providing route definition and request handling patterns
 
 `orator-endpoint` is a base class that other endpoint modules extend. Instead of wiring routes onto the Orator service server by hand, you describe an endpoint's routes declaratively and implement one handler method per route. The base class registers those routes against a running [Orator](https://github.com/fable-retold/orator) service and gives each endpoint a consistent initialization lifecycle.
 
-This package ships only the base class &mdash; it is not run on its own. You consume it by extending it (see the example below) or through higher-level modules that build on the same pattern.
+This package ships only the base class - it is not run on its own. You consume it by extending it (see the example below) or through higher-level modules that build on the same pattern.
 
 ## Installation
 
@@ -20,7 +20,7 @@ The package depends on a running [Orator](https://github.com/fable-retold/orator
 
 An endpoint is a [Fable](https://github.com/fable-retold/fable) service provider that groups a set of related HTTP routes. Each subclass:
 
-- declares its routes in an `EndpointMethods` map (HTTP verb &rarr; one or more `{ Path, Function }` entries), and
+- declares its routes in an `EndpointMethods` map (HTTP verb -> one or more `{ Path, Function }` entries), and
 - implements a handler method per route with the standard `(pRequest, pResponse, fNext)` signature.
 
 The base class reads `EndpointMethods` and binds each route onto the Orator service server, so the routes light up when the endpoint is registered. Routes that need extra middleware (for example a body parser on `PUT`/`POST`) can be registered explicitly in an initialization hook.
@@ -66,7 +66,7 @@ module.exports = EndpointServerInfo;
 module.exports.default_options = _DefaultOptions;
 ```
 
-Register the endpoint against an initialized Orator service. The exact registration entry point is implemented in the base class &mdash; in the demonstrated pattern endpoints are added with a static `addEndpoint(pEndpointHash, pEndpointClass, fCallback, pOrator)` helper that instantiates the endpoint, runs its initialization lifecycle, and maps each `EndpointMethods` route onto `pOrator.serviceServer`:
+Register the endpoint against an initialized Orator service. The exact registration entry point is implemented in the base class - in the demonstrated pattern endpoints are added with a static `addEndpoint(pEndpointHash, pEndpointClass, fCallback, pOrator)` helper that instantiates the endpoint, runs its initialization lifecycle, and maps each `EndpointMethods` route onto `pOrator.serviceServer`:
 
 ```javascript
 libOratorEndpoint.addEndpoint('ServerInfo', EndpointServerInfo, fCallback, _Orator);
@@ -82,9 +82,9 @@ libOratorEndpoint.addEndpoint('ServerInfo', EndpointServerInfo, fCallback, _Orat
 
 ## Related Modules
 
-- [orator](https://github.com/fable-retold/orator) &mdash; the API server this endpoint registers routes against
-- [orator-serviceserver-base](https://github.com/fable-retold/orator-serviceserver-base) &mdash; the service server interface (`get`/`post`/`put`/&hellip;) endpoints ultimately call
-- [meadow-endpoints](https://github.com/fable-retold/meadow-endpoints) &mdash; schema-driven RESTful endpoints over the Meadow data layer
+- [orator](https://github.com/fable-retold/orator) - the API server this endpoint registers routes against
+- [orator-serviceserver-base](https://github.com/fable-retold/orator-serviceserver-base) - the service server interface (`get`/`post`/`put`/...) endpoints ultimately call
+- [meadow-endpoints](https://github.com/fable-retold/meadow-endpoints) - schema-driven RESTful endpoints over the Meadow data layer
 
 ## License
 

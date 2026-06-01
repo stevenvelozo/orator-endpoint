@@ -69,13 +69,13 @@ module.exports.default_options = _DefaultOptions;
 
 Notes:
 
-- **`EndpointMethods`** is keyed by HTTP verb (`GET`, `PUT`, `POST`, `DEL`, &hellip;). Each entry maps a `Path` to the name of a handler method (`Function`) on the class.
+- **`EndpointMethods`** is keyed by HTTP verb (`GET`, `PUT`, `POST`, `DEL`, ...). Each entry maps a `Path` to the name of a handler method (`Function`) on the class.
 - **Path parameters** use the Restify style, e.g. `/1.0/Record/:category/:hash`, and arrive on `pRequest.params`.
 - **`module.exports.default_options`** exposes the defaults so the registration helper can read them when instantiating the endpoint.
 
 ## 2. Use the Initialization Lifecycle
 
-The base class runs ordered hooks around `initialize`. Override `onInitialize` (or `onBeforeInitialize` / `onAfterInitialize`) for setup work &mdash; for example, wiring a dependent service, or registering routes that need middleware the declarative map does not cover.
+The base class runs ordered hooks around `initialize`. Override `onInitialize` (or `onBeforeInitialize` / `onAfterInitialize`) for setup work - for example, wiring a dependent service, or registering routes that need middleware the declarative map does not cover.
 
 Routes that require a body parser (typically `PUT` / `POST`) are a common case. In the demonstrated pattern these are registered explicitly against the service server inside `onInitialize`:
 
@@ -89,7 +89,7 @@ onInitialize(fCallback)
 }
 ```
 
-The `*WithBodyParser` helpers come from the Orator service server &mdash; see [orator-serviceserver-base](https://fable-retold.github.io/orator-serviceserver-base) for the full verb surface (`get`, `post`, `put`, `del`, `patch`, `opts`, `head`, and their `*WithBodyParser` variants).
+The `*WithBodyParser` helpers come from the Orator service server - see [orator-serviceserver-base](https://fable-retold.github.io/orator-serviceserver-base) for the full verb surface (`get`, `post`, `put`, `del`, `patch`, `opts`, `head`, and their `*WithBodyParser` variants).
 
 ## 3. Register the Endpoint
 
@@ -139,7 +139,7 @@ tmpAnticipate.wait(
 
 `GET /1.0/ServerInfo` now returns the product/version JSON.
 
-> **About the registration entry point:** the `addEndpoint(pEndpointHash, pEndpointClass, fCallback, pOrator)` signature above reflects how endpoints are added in the demonstrated pattern. The exact entry point provided by the published base class lives in its source (`source/Orator-Endpoint-Base.js`) and is not reproduced in this checkout &mdash; confirm the precise registration call against the source if it differs.
+> **About the registration entry point:** the `addEndpoint(pEndpointHash, pEndpointClass, fCallback, pOrator)` signature above reflects how endpoints are added in the demonstrated pattern. The exact entry point provided by the published base class lives in its source (`source/Orator-Endpoint-Base.js`) and is not reproduced in this checkout - confirm the precise registration call against the source if it differs.
 
 ## Next Steps
 
